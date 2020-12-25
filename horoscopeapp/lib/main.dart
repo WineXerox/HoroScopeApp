@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: new ThemeData(
+      theme: ThemeData(
         brightness: Brightness.dark,
       ),
       home: HomePage(),
@@ -26,7 +26,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  final TextEditingController t1 = new TextEditingController(text: "");
+  final TextEditingController t1 = TextEditingController(text: "");
 
   void clear(){
     t1.text = "";
@@ -35,37 +35,37 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
-        title: new Text("Horoscope App",style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold),),
+      appBar: AppBar(
+        title: Text("Horoscope App",style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold),),
       ),
-      drawer: new Drawer(
-        child: new ListView(
+      drawer: Drawer(
+        child: ListView(
           children: <Widget>[
-            new UserAccountsDrawerHeader(
-                accountName: new Text("Horoscope App",style: new TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),),
-                accountEmail: new Text("horoscopeapp@gmail.com",style: new TextStyle(fontSize: 15,color: Colors.white),),
-                currentAccountPicture: new CircleAvatar(
+            UserAccountsDrawerHeader(
+                accountName: Text("Horoscope App",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),),
+                accountEmail: Text("horoscopeapp@gmail.com",style: TextStyle(fontSize: 15,color: Colors.white),),
+                currentAccountPicture: CircleAvatar(
                   backgroundColor: Colors.purple[300],
-                  child: new Text("HA",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                  child: Text("HA",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                 ),
             ),
-            new ListTile(
-              title: new Text("Today's Horoscope",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
-              trailing: new Icon(Icons.wb_sunny,size: 20,color: Colors.white,),
+            ListTile(
+              title: Text("Today's Horoscope",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
+              trailing: Icon(Icons.wb_sunny,size: 20,color: Colors.white,),
               onTap: (){
                 Navigator.push(context,MaterialPageRoute(builder: (BuildContext context)=>HomePage()));
               },
             ),
-            new Padding(padding: EdgeInsets.only(top: 10)),
-            new Divider(
+            Padding(padding: EdgeInsets.only(top: 10)),
+            Divider(
               height: 10,
               thickness: 2,
               color: Colors.grey[700],
             ),
-            new Padding(padding: EdgeInsets.only(top: 10)),
-            new ListTile(
-              title: new Text("Close",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
-              trailing: new Icon(Icons.close,size: 20,color: Colors.white,),
+            Padding(padding: EdgeInsets.only(top: 10)),
+            ListTile(
+              title: Text("Close",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
+              trailing: Icon(Icons.close,size: 20,color: Colors.white,),
               onTap: (){
                 Navigator.pop(context);
               },
@@ -73,41 +73,41 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: new Container(
-        child: new Column(
+      body: Container(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            new Image.asset("assests/horoscope.jpg",height:273,width: 400,fit: BoxFit.cover,),
-            new Padding(padding: const EdgeInsets.only(top: 8)),
-            new Container(
+            Image.asset("assests/horoscope.jpg",height:273,width: 400,fit: BoxFit.cover,),
+            Padding(padding: const EdgeInsets.only(top: 8)),
+            Container(
               padding: const EdgeInsets.all(15),
-              child: new TextField(
-                decoration: new InputDecoration(
-                  icon: new Icon(Icons.wb_sunny,color: Colors.purple[300],),
+              child: TextField(
+                decoration: InputDecoration(
+                  icon: Icon(Icons.wb_sunny,color: Colors.purple[300],),
                   labelText: "Enter Your Sun Sign:",
-                  labelStyle: new TextStyle(fontSize: 25,color: Colors.purple[300],fontWeight: FontWeight.bold),
+                  labelStyle: TextStyle(fontSize: 25,color: Colors.purple[300],fontWeight: FontWeight.bold),
                 ),
                 keyboardType: TextInputType.text,
                 controller: t1,
               ),
             ),
-            new Padding(padding: const EdgeInsets.only(top: 5)),
-            new Row(
+            Padding(padding: const EdgeInsets.only(top: 5)),
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                new RaisedButton(
-                  child : new Text("Submit",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
+                RaisedButton(
+                  child : Text("Submit",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
                     onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => ResultPage(details: t1.text,)));
                     },
                   color: Colors.purple[300],
-                  shape: new RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
-                new RaisedButton(
-                  child : new Text("Clear",style: TextStyle(fontSize: 20,color: Colors.purple[300],fontWeight: FontWeight.bold),),
+                RaisedButton(
+                  child : Text("Clear",style: TextStyle(fontSize: 20,color: Colors.purple[300],fontWeight: FontWeight.bold),),
                   onPressed: clear,
                   color: Colors.white,
-                  shape: new RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
               ],
             )
