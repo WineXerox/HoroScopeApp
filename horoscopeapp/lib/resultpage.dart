@@ -30,7 +30,8 @@ class _ResultPageState extends State<ResultPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:  AppBar(
-        title:  Text("Your Horoscope",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
+        title: Text("Your Horoscope",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),
+        ),
       ),
       body: horoscopedetails == null ? 
       Center(
@@ -44,8 +45,10 @@ class _ResultPageState extends State<ResultPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text("Sun Sign : ",style: TextStyle(fontSize: 30,color: Colors.white,fontWeight: FontWeight.bold),),
-              Text(horoscopedetails["sunsign"],style: TextStyle(fontSize: 30,color: Colors.purple[300],fontWeight: FontWeight.bold),),
+              Text("Sun Sign : ",style: TextStyle(fontSize: 30,color: Colors.white,fontWeight: FontWeight.bold),
+              ),
+              Text(horoscopedetails["sunsign"],style: TextStyle(fontSize: 30,color: Colors.purple[300],fontWeight: FontWeight.bold),
+              ),
             ],
           ),
           Padding(padding: const EdgeInsets.only(top: 10)),
@@ -53,8 +56,10 @@ class _ResultPageState extends State<ResultPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text("Date : ",style: TextStyle(fontSize: 30,color: Colors.white,fontWeight: FontWeight.bold),),
-              Text(horoscopedetails["date"],style: TextStyle(fontSize: 30,color: Colors.purple[300],fontWeight: FontWeight.bold),),
+              Text("Date : ",style: TextStyle(fontSize: 30,color: Colors.white,fontWeight: FontWeight.bold),
+              ),
+              Text(horoscopedetails["date"],style: TextStyle(fontSize: 30,color: Colors.purple[300],fontWeight: FontWeight.bold),
+              ),
             ],
           ),
           Padding(padding: const EdgeInsets.only(top: 15)),
@@ -62,14 +67,16 @@ class _ResultPageState extends State<ResultPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text("Horoscope For The Day : ",style: TextStyle(fontSize: 30,color: Colors.white,fontWeight: FontWeight.bold),),
+              Text("Horoscope For The Day : ",style: TextStyle(fontSize: 30,color: Colors.white,fontWeight: FontWeight.bold),
+              ),
               Text(horoscopedetails["horoscope"],style: TextStyle(fontSize: 20,color: Colors.purple[300],fontWeight: FontWeight.bold),textAlign: TextAlign.justify,),
             ],
           ),
           Padding(padding: const EdgeInsets.only(top: 20)),
           RaisedButton(
             padding: const EdgeInsets.all(10),
-            child : Text("Go Back",style: TextStyle(fontSize: 25,color: Colors.purple[300],fontWeight: FontWeight.bold),),
+            child : Text("Go Back",style: TextStyle(fontSize: 25,color: Colors.purple[300],fontWeight: FontWeight.bold),
+            ),
             onPressed: (){
               Navigator.pop(context);
             },

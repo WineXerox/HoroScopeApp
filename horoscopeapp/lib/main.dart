@@ -36,21 +36,30 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Horoscope App",style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold),),
+        title: Text("Horoscope App",
+        style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold),
+        ),
       ),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
             UserAccountsDrawerHeader(
-                accountName: Text("Horoscope App",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),),
-                accountEmail: Text("horoscopeapp@gmail.com",style: TextStyle(fontSize: 15,color: Colors.white),),
+                accountName: Text("Horoscope App",
+                style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),
+                ),
+                accountEmail: Text("horoscopeapp@gmail.com",
+                style: TextStyle(fontSize: 15,color: Colors.white),
+                ),
                 currentAccountPicture: CircleAvatar(
                   backgroundColor: Colors.purple[300],
-                  child: Text("HA",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                  child: Text("HA",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
+                  ),
                 ),
             ),
             ListTile(
-              title: Text("Today's Horoscope",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
+              title: Text("Today's Horoscope",
+              style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),
+              ),
               trailing: Icon(Icons.wb_sunny,size: 20,color: Colors.white,),
               onTap: (){
                 Navigator.push(context,MaterialPageRoute(builder: (BuildContext context)=>HomePage()));
@@ -64,7 +73,8 @@ class _HomePageState extends State<HomePage> {
             ),
             Padding(padding: EdgeInsets.only(top: 10)),
             ListTile(
-              title: Text("Close",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
+              title: Text("Close",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),
+              ),
               trailing: Icon(Icons.close,size: 20,color: Colors.white,),
               onTap: (){
                 Navigator.pop(context);
@@ -96,15 +106,17 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 RaisedButton(
-                  child : Text("Submit",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
-                    onPressed: (){
+                  child : Text("Submit",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),
+                  ),
+                  onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => ResultPage(details: t1.text,)));
-                    },
+                  },
                   color: Colors.purple[300],
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
                 RaisedButton(
-                  child : Text("Clear",style: TextStyle(fontSize: 20,color: Colors.purple[300],fontWeight: FontWeight.bold),),
+                  child : Text("Clear",style: TextStyle(fontSize: 20,color: Colors.purple[300],fontWeight: FontWeight.bold),
+                  ),
                   onPressed: clear,
                   color: Colors.white,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
